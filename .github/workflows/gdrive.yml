@@ -1,0 +1,15 @@
+name: Gdrive upload
+on: [push]
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Upload to gdrive
+        uses: adityak74/google-drive-upload-git-action@main
+        with:
+          credentials: ${{ secrets.GSA_CREDENTIALS }}
+          filename: "*"
+          folderId: ${{ secrets.GSA_FOLDER_ID }}
+          overwrite: "true" # optional boolean
