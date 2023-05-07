@@ -12,7 +12,7 @@ jobs:
           echo "" >> README.md
           echo "Uploaded from commit : `git show -s --oneline`" >> README.md 
           echo "" >> README.md
-          echo "To view this commit on GitHub, visit: https://github.com/danya02/tree/`git rev-parse HEAD`" >> README.md
+          echo "To view this commit on GitHub, visit: https://github.com/danya02/rudn-year2-prolog/tree/`git rev-parse HEAD`" >> README.md
 
       - name: Upload to gdrive
         uses: adityak74/google-drive-upload-git-action@main
