@@ -1,0 +1,41 @@
+---- Example 1 ----
+Get list of repeat clients:
+[+7 926 987 65 43,+7 965 432 10 98,+7 999 123 45 67]
+---- Example 2 ----
+Get each client's total spending and tier:
+Анна Иванова:2582:silver
+Илья Петров:2052:silver
+Елена Сидорова:1334:bronze
+Сергей Кузнецов:4087:platinum
+---- Example 3 ----
+Get the products purchased on every day:
+12:[Сыр,Картофель,Лук]
+13:[Филе индейки,Манная крупа,Сахар]
+15:[Молоко,Сыр,Кефир,Картофель,Филе индейки,Овсяная крупа,Мука]
+19:[Молоко,Творог,Сыр,Кефир,Картофель,Лук,Морковь,Свиная шея,Овсяная крупа,Рис]
+20:[Молоко,Творог,Сыр,Кефир,Картофель,Лук,Томаты,Морковь,Свиная шея,Филе индейки,Греча,Сахар,Спагетти,Мука]
+23:[Творог,Картофель,Голень куриная,Филе индейки,Рис,Соль]
+24:[Кефир,Лук,Спагетти]
+---- Example 4 ----
+Get the cashflow for every day:
+12:429
+13:341
+15:1090
+19:2751
+20:4475
+23:615
+24:354
+---- Example 5 ----
+Get the categories of product purchased by every client:
+(the last client does not purchase meat products)
+Анна Иванова:[Mолочный отдел,Овощи,Мясо,Бакалея]
+Илья Петров:[Mолочный отдел,Овощи,Мясо,Бакалея]
+Елена Сидорова:[Mолочный отдел,Овощи,Мясо,Бакалея]
+Сергей Кузнецов:[Mолочный отдел,Овощи,Бакалея]
+---- Example 6 ----
+Which categories does a client not buy?
+Client Сергей Кузнецов does not buy category Мясо
+---- Example 7 ----
+Run a simple HTTP server that returns JSON data about the database
+and allows adding new facts into the database (in memory only)
+Starting server on port 8080!!

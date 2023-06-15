@@ -1,0 +1,118 @@
+% GLOBAL CONFIG
+run_web_server :- true.  % Comment this out when running in an environment where a web server does not work.
+
+
+% Purchaseable products
+% product(id, name, category, unit_price).
+
+product( product_info{id:1, name:"Молоко", category: "Mолочный отдел", cost: 120} ):- true.
+product( product_info{id:2, name:"Творог", category: "Mолочный отдел", cost: 230}).
+product( product_info{id:3, name:"Сыр", category: "Mолочный отдел", cost: 300}).
+product( product_info{id:4, name:"Кефир", category: "Mолочный отдел", cost: 90}).
+
+product( product_info{id:5, name:"Картофель", category: "Овощи", cost: 35}).
+product( product_info{id:6, name:"Лук", category: "Овощи", cost: 12}).
+product( product_info{id:7, name:"Томаты", category: "Овощи", cost: 56}).
+product( product_info{id:8, name:"Морковь", category: "Овощи", cost: 22}).
+
+product( product_info{id:9, name:"Голень куриная", category: "Мясо", cost: 21}).
+product( product_info{id:10, name:"Свиная шея", category: "Мясо", cost: 48}).
+product( product_info{id:11, name:"Окорок бараний", category: "Мясо", cost: 129}).
+product( product_info{id:12, name:"Филе индейки", category: "Мясо", cost: 43}).
+
+product( product_info{id:13, name:"Греча", category: "Бакалея", cost: 60}).
+product( product_info{id:14, name:"Манная крупа", category: "Бакалея", cost: 25}).
+product( product_info{id:15, name:"Овсяная крупа", category: "Бакалея", cost: 105}).
+product( product_info{id:16, name:"Рис", category: "Бакалея", cost: 95}).
+product( product_info{id:17, name:"Сахар", category: "Бакалея", cost: 58}).
+product( product_info{id:18, name:"Соль", category: "Бакалея", cost: 23}).
+product( product_info{id:19, name:"Спагетти", category: "Бакалея", cost: 120}).
+product( product_info{id:20, name:"Мука", category: "Бакалея", cost: 120}).
+
+% Clients
+% client(name, phone_number).
+client( client_info{name: "Анна Иванова", phone: "+7 999 123 45 67"} ) :- true.
+client( client_info{name: "Илья Петров", phone: "+7 926 987 65 43"} ).
+client( client_info{name: "Елена Сидорова", phone: "+7 925 555 44 33"} ).
+client( client_info{name: "Сергей Кузнецов", phone: "+7 965 432 10 98"} ).
+
+% Purchase transactions
+% purchase(purchase_id, client_phone, product_id, quantity, day_number).
+purchase(purchase_info{id: 1, phone: "+7 999 123 45 67", product_id: 3, quantity: 1, day_number: 12}).
+purchase(purchase_info{id: 2, phone: "+7 999 123 45 67", product_id: 5, quantity: 3, day_number: 12}).
+purchase(purchase_info{id: 3, phone: "+7 999 123 45 67", product_id: 6, quantity: 2, day_number: 12}).
+
+purchase(purchase_info{id: 4, phone: "+7 999 123 45 67", product_id: 12, quantity: 6, day_number: 13}).
+purchase(purchase_info{id: 5, phone: "+7 999 123 45 67", product_id: 14, quantity: 1, day_number: 13}).
+purchase(purchase_info{id: 6, phone: "+7 999 123 45 67", product_id: 17, quantity: 1, day_number: 13}).
+
+purchase(purchase_info{id: 7, phone: "+7 999 123 45 67", product_id: 3, quantity: 1, day_number: 15}).
+purchase(purchase_info{id: 8, phone: "+7 999 123 45 67", product_id: 5, quantity: 4, day_number: 15}).
+purchase(purchase_info{id: 9, phone: "+7 999 123 45 67", product_id: 4, quantity: 1, day_number: 15}).
+purchase(purchase_info{id: 10, phone: "+7 999 123 45 67", product_id: 12, quantity: 5, day_number: 15}).
+purchase(purchase_info{id: 11, phone: "+7 999 123 45 67", product_id: 1, quantity: 1, day_number: 15}).
+purchase(purchase_info{id: 12, phone: "+7 999 123 45 67", product_id: 15, quantity: 1, day_number: 15}).
+purchase(purchase_info{id: 13, phone: "+7 999 123 45 67", product_id: 20, quantity: 1, day_number: 15}).
+
+purchase(purchase_info{id: 14, phone: "+7 926 987 65 43", product_id: 1, quantity: 2, day_number: 19}).
+purchase(purchase_info{id: 15, phone: "+7 926 987 65 43", product_id: 2, quantity: 2, day_number: 19}).
+purchase(purchase_info{id: 16, phone: "+7 926 987 65 43", product_id: 3, quantity: 1, day_number: 19}).
+purchase(purchase_info{id: 17, phone: "+7 926 987 65 43", product_id: 6, quantity: 1, day_number: 19}).
+purchase(purchase_info{id: 18, phone: "+7 926 987 65 43", product_id: 10, quantity: 5, day_number: 19}).
+purchase(purchase_info{id: 19, phone: "+7 926 987 65 43", product_id: 16, quantity: 1, day_number: 19}).
+
+purchase(purchase_info{id: 20, phone: "+7 925 555 44 33", product_id: 2, quantity: 2, day_number: 20}).
+purchase(purchase_info{id: 21, phone: "+7 925 555 44 33", product_id: 7, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 22, phone: "+7 925 555 44 33", product_id: 8, quantity: 2, day_number: 20}).
+purchase(purchase_info{id: 23, phone: "+7 925 555 44 33", product_id: 12, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 24, phone: "+7 925 555 44 33", product_id: 8, quantity: 2, day_number: 20}).
+purchase(purchase_info{id: 25, phone: "+7 925 555 44 33", product_id: 12, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 26, phone: "+7 925 555 44 33", product_id: 19, quantity: 3, day_number: 20}).
+
+purchase(purchase_info{id: 27, phone: "+7 965 432 10 98", product_id: 3, quantity: 1, day_number: 19}).
+purchase(purchase_info{id: 28, phone: "+7 965 432 10 98", product_id: 4, quantity: 1, day_number: 19}).
+purchase(purchase_info{id: 29, phone: "+7 965 432 10 98", product_id: 6, quantity: 4, day_number: 19}).
+purchase(purchase_info{id: 30, phone: "+7 965 432 10 98", product_id: 8, quantity: 3, day_number: 19}).
+purchase(purchase_info{id: 31, phone: "+7 965 432 10 98", product_id: 2, quantity: 3, day_number: 19}).
+purchase(purchase_info{id: 32, phone: "+7 965 432 10 98", product_id: 5, quantity: 3, day_number: 19}).
+purchase(purchase_info{id: 33, phone: "+7 965 432 10 98", product_id: 15, quantity: 1, day_number: 19}).
+
+purchase(purchase_info{id: 34, phone: "+7 965 432 10 98", product_id: 1, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 35, phone: "+7 965 432 10 98", product_id: 5, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 36, phone: "+7 965 432 10 98", product_id: 1, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 37, phone: "+7 965 432 10 98", product_id: 6, quantity: 4, day_number: 20}).
+purchase(purchase_info{id: 38, phone: "+7 965 432 10 98", product_id: 6, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 39, phone: "+7 965 432 10 98", product_id: 8, quantity: 2, day_number: 20}).
+purchase(purchase_info{id: 40, phone: "+7 965 432 10 98", product_id: 17, quantity: 2, day_number: 20}).
+purchase(purchase_info{id: 41, phone: "+7 965 432 10 98", product_id: 13, quantity: 1, day_number: 20}).
+purchase(purchase_info{id: 42, phone: "+7 965 432 10 98", product_id: 20, quantity: 1, day_number: 20}).
+
+purchase(purchase_info{id: 43, phone: "+7 999 123 45 67", product_id: 2, quantity: 1, day_number: 20}).
+purchase(purchase_info{id: 44, phone: "+7 999 123 45 67", product_id: 3, quantity: 1, day_number: 20}).
+purchase(purchase_info{id: 45, phone: "+7 999 123 45 67", product_id: 6, quantity: 4, day_number: 20}).
+purchase(purchase_info{id: 46, phone: "+7 999 123 45 67", product_id: 10, quantity: 3, day_number: 20}).
+
+purchase(purchase_info{id: 47, phone: "+7 965 432 10 98",product_id: 1, quantity: 2, day_number: 20}).
+purchase(purchase_info{id: 48, phone: "+7 965 432 10 98",product_id: 3, quantity: 1, day_number: 20}).
+purchase(purchase_info{id: 49, phone: "+7 965 432 10 98", product_id: 4, quantity: 3, day_number: 20}).
+purchase(purchase_info{id: 50, phone: "+7 965 432 10 98", product_id: 20, quantity: 1, day_number: 20}).
+purchase(purchase_info{id: 51, phone: "+7 965 432 10 98", product_id: 1, quantity: 2, day_number: 20}).
+
+purchase(purchase_info{id: 52, phone: "+7 926 987 65 43", product_id: 2, quantity: 1, day_number: 23}).
+purchase(purchase_info{id: 53, phone: "+7 926 987 65 43", product_id: 5, quantity: 4, day_number: 23}).
+purchase(purchase_info{id: 54, phone: "+7 926 987 65 43", product_id: 9, quantity: 4, day_number: 23}).
+purchase(purchase_info{id: 55, phone: "+7 926 987 65 43", product_id: 12, quantity: 1, day_number: 23}).
+purchase(purchase_info{id: 56, phone: "+7 926 987 65 43", product_id: 16, quantity: 1, day_number: 23}).
+purchase(purchase_info{id: 57, phone: "+7 926 987 65 43", product_id: 18, quantity: 1, day_number: 23}).
+
+purchase(purchase_info{id: 58, phone: "+7 926 987 65 43", product_id: 4, quantity: 1, day_number: 24}).
+purchase(purchase_info{id: 59, phone: "+7 965 432 10 98", product_id: 6, quantity: 2, day_number: 24}).
+purchase(purchase_info{id: 60, phone: "+7 965 432 10 98", product_id: 19, quantity: 2, day_number: 24}).
+
+% Client tiers, based on how much the client has spent
+% tier(tier_name, threshold)
+tier(none, 0) :- true.
+tier(bronze, 1000).
+tier(silver, 2000).
+tier(gold, 3000).
+tier(platinum, 4000).
